@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= heading %></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4"><%= heading %></h1>
+
+    <% if (locals.post) { %>
+      <!-- Edit Form -->
+      <form id="editForm" method="post" action="/api/posts/<%=post.id%>">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" class="form-control" value="<%=post.title %>" required>
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="form-control" rows="10" required><%=post.content %></textarea>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" class="form-control" value="<%=post.author %>" required>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">
+          <%= submit %>
+        </button>
+      </form>
+    <% } else { %>
+      <!-- New Post Form -->
+      <form id="newPostForm" method="post" action="/api/posts">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea id="content" name="content" class="form-control" placeholder="Content" required rows="10"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" name="author" class="form-control" placeholder="Author" required>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">
+          <%= submit %>
+        </button>
+      </form>
+    <% } %>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

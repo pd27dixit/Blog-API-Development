@@ -1,0 +1,56 @@
+/* Remove existing CSS and rely on Bootstrap */
+body {
+  background-color: #f8f9fa; /* Light background color */
+  color: #495057; /* Darker text color */
+}
+
+.container {
+  max-width: 960px;
+  margin-top: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+a, button {
+  border-radius: 4px;
+}
+
+/* Custom styles for the new layout */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.card-body {
+  background-color: #fff;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+}
+
+.btn-custom {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+}
+
+.btn-custom-green {
+  background-color: #28a745; /* Bootstrap's green color */
+  border-color: #28a745;
+  color: white;
+}
+
+.btn-custom-green:hover {
+  background-color: #218838; /* Darker green for hover effect */
+  border-color: #1e7e34;
+}
